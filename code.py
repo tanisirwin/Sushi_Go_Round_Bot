@@ -35,7 +35,7 @@ y_pad = 138
 
 # Move Mouse ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def mousePos(cord):
-    win32api.SetCursorPos( x_pad + cord[0], y_pad + cord[1] )
+    win32api.SetCursorPos(( x_pad + cord[0], y_pad + cord[1] ))
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Left Mouse ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,17 +43,17 @@ def leftClick():
     win32api.mouse_event( win32con.MOUSEEVENTF_LEFTDOWN, 0, 0 )
     time.sleep( sleep )
     win32api.mouse_event( win32con.MOUSEEVENTF_LEFTUP, 0, 0 )
-    print "Left Clicked"
+    print 'Left Clicked'
 
 def leftHold():
     win32api.mouse_event( win32con.MOUSEEVENTF_LEFTDOWN, 0, 0 )
     time.sleep( sleep )
-    print "Left Holding..."
+    print 'Left Holding...'
 
 def leftRelease():
     win32api.mouse_event( win32con.MOUSEEVENTF_LEFTUP, 0, 0 )
     time.sleep( sleep )
-    print "Left Released"
+    print 'Left Released'
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Utility ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +69,7 @@ def screenGrab():
     im.save(os.getcwd() + '\\full_snap__' + str(int(time.time())) + '.png', 'PNG')
 
 def main():
-    pass
+    screenGrab()
 
 if __name__ == '__main__':
     main()
